@@ -12,9 +12,11 @@ import {
   faWrench,
   faInfoCircle,
   faVideo,
+  faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useStudioState } from '../studio-state';
+import { useSettings } from '../settings';
 
 
 // The header, including a logo on the left and the navigation on the right.
@@ -148,6 +150,7 @@ const Navigation = props => {
   const closeMenu = () => updateIsOpened(false);
   const { t } = useTranslation();
   const [colorMode] = useColorMode();
+  const settings = useSettings();
 
   return (
     <Fragment>
@@ -222,6 +225,15 @@ const Navigation = props => {
         >
           {t('nav-about')}
         </NavElement>
+        {settings.opencast?.logoutUrl && (
+          <NavElement
+            target="/logout"
+            icon={faSignOut}
+            onClick={closeMenu}
+          >
+            {t('nav-logout')}
+          </NavElement>
+        )}
       </nav>
 
       {/* A black, half-transparent overlay over the body */}

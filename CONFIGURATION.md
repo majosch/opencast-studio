@@ -58,6 +58,9 @@ parameter as well. See further below for information on that.
 # `/studio`). Default: false.
 #loginProvided = true
 
+# If this value is defined, a button named "Logout" is added to the header. It's
+# just a link to the provided 'logoutUrl'.
+#logoutUrl = "/Shibboleth.sso/Logout?return=https://stable.opencast.org"
 
 [upload]
 # The ID of the series which the recording is a part of. When uploading the

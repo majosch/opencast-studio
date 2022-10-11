@@ -52,6 +52,10 @@ const Routes = ({ settingsManager, userHasWebcam }) => {
           <About />
         </Route>
 
+        <Route path="/logout">
+          <Logout />
+        </Route>
+
         <Route path="/" exact>
           <Studio
             activeStep={activeStep}
@@ -66,6 +70,13 @@ const Routes = ({ settingsManager, userHasWebcam }) => {
       </Switch>
     </Fragment>
   );
+};
+
+const Logout = () => {
+  const settings = useSettings();
+
+  window.location.href = settings.opencast?.logoutUrl || '/';
+  return null;
 };
 
 const PreventClose = () => {

@@ -451,6 +451,7 @@ const SCHEMA = {
     loginName: types.string,
     loginPassword: types.string,
     loginProvided: types.boolean,
+    logoutUrl: types.string,
   },
   upload: {
     seriesId: types.string,
